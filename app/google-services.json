@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1053268614826",
+    "project_id": "shop-c2ca0",
+    "storage_bucket": "shop-c2ca0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053268614826:android:4ba935ab22ff3ee5adfad3",
+        "android_client_info": {
+          "package_name": "com.nuu.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053268614826-41ik0bj1trum1js51puf6p0qq103cnmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBN_U7wjnEgSMmuhtjnIA_xrcKc-Kzihk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053268614826-41ik0bj1trum1js51puf6p0qq103cnmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
