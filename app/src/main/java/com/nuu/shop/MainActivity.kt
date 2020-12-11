@@ -112,19 +112,21 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 //        tv_nick_name.text = getNickName()
-        FirebaseDatabase.getInstance()
-            .getReference("users")
-            .child(auth.currentUser!!.uid)
-            .child("nickname")
-            .addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    tv_nick_name.text = snapshot.value.toString()
-                }
+        if(auth.currentUser!=null){
+            FirebaseDatabase.getInstance()
+                .getReference("users")
+                .child(auth.currentUser!!.uid)
+                .child("nickname")
+                .addListenerForSingleValueEvent(object: ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        tv_nick_name.text = snapshot.value.toString()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
+                    override fun onCancelled(error: DatabaseError) {
 
-                }
-            })
+                    }
+                })
+        }
     }
 
     private fun authChanged(auth: FirebaseAuth) {
