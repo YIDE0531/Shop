@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,11 +27,16 @@ class BusActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_bus)
         context = this
         dialog = setProgressDialog(this, "資料處理中..")
-        dialog.show()
+        //dialog.show()
         doAsync {
             val url = URL("https://data.tycg.gov.tw/opendata/datalist/datasetMeta/download?id=b3abedf0-aeae-4523-a804-6e807cbad589&rid=bf55b21a-2b7c-4ede-8048-f75420344aed")
             val json = url.readText()
+            val url2 = URL("https://data.tycg.gov.tw/opendata/datalist/datasetMeta/download?id=b3abedf0-aeae-4523-a804-6e807cbad589&rid=bf55b21a-2b7c-4ede-8048-f75420344aed")
+            val json2 = url2.readText()
+            val url3 = URL("https://data.tycg.gov.tw/opendata/datalist/datasetMeta/download?id=b3abedf0-aeae-4523-a804-6e807cbad589&rid=bf55b21a-2b7c-4ede-8048-f75420344aed")
+            val json3 = url3.readText()
             uiThread {
+                Toast.makeText(this@BusActivity, "3333333", Toast.LENGTH_SHORT).show()
                 parseGson(json)
             }
         }

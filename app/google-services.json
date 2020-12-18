@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1053268614826",
+    "firebase_url": "https://shop-c2ca0-default-rtdb.firebaseio.com",
     "project_id": "shop-c2ca0",
     "storage_bucket": "shop-c2ca0.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1053268614826-5inmjiv0ftblrnodg0e3jklgq8a0r2gs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nuu.shop",
+            "certificate_hash": "e58d8a6aed1e5ca2f85ea3ab318625bcdbe629fc"
+          }
+        },
         {
           "client_id": "1053268614826-41ik0bj1trum1js51puf6p0qq103cnmb.apps.googleusercontent.com",
           "client_type": 3

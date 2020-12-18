@@ -9,7 +9,6 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.row_function.view.*
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
@@ -34,10 +32,7 @@ class MainActivity : AppCompatActivity() {
         "Download coupons",
         "News",
         "Movies",
-        "B",
-        "News",
-        "News",
-        "News",
+        "Maps",
         "Bus")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,11 +94,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun functionClicked(holder: FunctionHolder, position: Int) {
-        Log.d(TAG, "functionClicked: $position", )
+        Log.d(TAG, "functionClicked: $position")
         when(position){
             1 -> startActivity(Intent(this, ContactActivity::class.java))
             2 -> startActivity(Intent(this, ParkingActivity::class.java))
+            4 -> startActivity(Intent(this, NewsActivity::class.java))
             5 -> startActivity(Intent(this, MovieActivity::class.java))
+            6 -> startActivity(Intent(this, MapsActivity::class.java))
             10 -> startActivity(Intent(this, BusActivity::class.java))
 
         }
@@ -112,12 +109,12 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 //        tv_nick_name.text = getNickName()
-        if(auth.currentUser!=null){
+        if(auth.currentUser!=null) {
             FirebaseDatabase.getInstance()
                 .getReference("users")
                 .child(auth.currentUser!!.uid)
                 .child("nickname")
-                .addListenerForSingleValueEvent(object: ValueEventListener{
+                .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         tv_nick_name.text = snapshot.value.toString()
                     }
